@@ -1,0 +1,6 @@
+{
+  "/api/": {
+    "target": "https://account.gomining.com/",
+    "changeOrigin": true
+  }
+}

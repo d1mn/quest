@@ -1,0 +1,49 @@
+.success {
+  background-color: $lightPink;
+}
+
+.success-form {
+  &__overflow {
+    overflow: hidden;
+    min-height: 80vh;
+  }
+
+  &__wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &__bg {
+    background-image: url('/assets/images/pink-bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    width: 300px;
+    color: $black;
+  }
+
+  &__heading {
+    font-size: 60px;
+    font-weight: bold;
+  }
+
+  &__sub-heading {
+    margin-top: -20px;
+    font-size: 25px;
+  }
+  &__link {
+    color: $black;
+    text-decoration: underline;
+    &:hover, &:focus {
+      color: $black;
+    }
+  }
+
+  &__small {
+    font-size: .8em;
+  }
+}

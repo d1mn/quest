@@ -1,0 +1,7 @@
+@import "~bootstrap/scss/utilities/visibility";
+
+@for $i from 0 through 10 {
+  .op-#{$i} {
+    opacity: $i / 10;
+  }
+}

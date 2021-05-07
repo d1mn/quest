@@ -1,0 +1,47 @@
+@import "~bootstrap/scss/forms";
+
+.form-control {
+  &:disabled,
+  &[readonly] {
+    color: $input-disabled-color;
+    border-color: $input-disabled-border-color;
+
+    &::placeholder {
+      color: $input-disabled-placeholder-color;
+    }
+  }
+
+  &::placeholder {
+    transition: $input-transition;
+  }
+}
+
+.input-icon {
+  position: relative;
+}
+
+.form-control-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 0;
+}
+
+.form-group-context-item {
+  border: 1px solid $gray-200;
+  padding: 12px;
+
+  &:first-child {
+    width: 180px;
+    color: $gray-600;
+    font-weight: $font-weight-bold;
+  }
+
+  &:last-child {
+    flex-grow: 1;
+    border-left: none;
+  }
+}
+.form-group-context-label {
+  margin-bottom: -1px;
+}

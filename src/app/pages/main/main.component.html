@@ -1,0 +1,28 @@
+<div class="container py-5 codeForm">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center my-5">
+      <img class="codeForm__logo mb-5" src="assets/images/logo-white.png">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <p class="mb-5">Чтобы продолжить борьбу за суперприз, не пропусти Вечер активностей!<br>
+        Кажется, тебе нужно, познакомиться с другими экипажами и кое-что собрать.</p>
+      <form (submit)="submit()" [formGroup]="form">
+        <div class="d-flex align-items-end codeForm__code mb-3"
+             formArrayName="codes"
+             *ngFor="let item of controls; let index = index">
+          <div class="codeForm__number mr-2">{{ index + 1 | twoDigits }}</div>
+          <div class="form-group mb-1 flex-grow-1">
+            <input class="form-control form-control-sm codeForm__control" [formControlName]="index">
+          </div>
+        </div>
+        <p class="text-danger codeForm__error">
+          {{ errorMessage }}
+        </p>
+        <div class="mt-4">
+          <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="pending$.value">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

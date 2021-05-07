@@ -1,0 +1,58 @@
+@import "~bootstrap/scss/utilities/spacing";
+
+@each $abbrev, $prop in (m: margin, p: padding, n: margin) {
+  $values: ();
+  $values: map-merge(
+      (
+        0: 0,
+        1: 1,
+      ),
+      $values
+  );
+
+  @each $size, $length in $values {
+    $infix: if( $size == 0 , '-0' , '' );
+    $value: if( $abbrev == n , -$offset-main , $offset-main );
+    $value-sm: if( $abbrev == n , -$offset-main-sm , $offset-main-sm );
+
+    .o-#{$abbrev}#{$infix} {
+      #{$prop}: if($size == 0, 0, $value-sm) !important;
+
+      @if ($size != 0) {
+        @include media-breakpoint-up(sm) {#{$prop}: $value !important;}
+      }
+    }
+    .ot-#{$abbrev}#{$infix},
+    .oy-#{$abbrev}#{$infix} {
+      #{$prop}-top: if($size == 0, 0, $value-sm) !important;
+
+      @if ($size != 0) {
+        @include media-breakpoint-up(sm) {#{$prop}-top: $value !important;}
+      }
+    }
+    .or-#{$abbrev}#{$infix},
+    .ox-#{$abbrev}#{$infix} {
+      #{$prop}-right: if($size == 0, 0, $value-sm) !important;
+
+      @if ($size != 0) {
+        @include media-breakpoint-up(sm) {#{$prop}-right: $value !important;}
+      }
+    }
+    .ob-#{$abbrev}#{$infix},
+    .oy-#{$abbrev}#{$infix} {
+      #{$prop}-bottom: if($size == 0, 0, $value-sm) !important;
+
+      @if ($size != 0) {
+        @include media-breakpoint-up(sm) {#{$prop}-bottom: $value !important;}
+      }
+    }
+    .ol-#{$abbrev}#{$infix},
+    .ox-#{$abbrev}#{$infix} {
+      #{$prop}-left: if($size == 0, 0, $value-sm) !important;
+
+      @if ($size != 0) {
+        @include media-breakpoint-up(sm) {#{$prop}-left: $value !important;}
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.gray {
+  //background-color: ;
+}
+
+.codeForm{
+  &__code {
+
+  }
+  &__control {
+
+  }
+  &__number {
+
+    font-size: 20px;
+    width: 36px;
+  }
+  &__error {
+    min-height: 1em;
+  }
+  &__control {
+
+  }
+
+  &__logo {
+    width: 140px;
+  }
+}

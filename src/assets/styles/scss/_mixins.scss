@@ -1,0 +1,73 @@
+@mixin caret-down {
+  &::after {
+    transform: translate(-25%, 0%) rotate(-45deg);
+  }
+  &::before {
+    transform: translate(-80%, 0%) rotate(45deg);
+  }
+}
+
+@mixin caret-up {
+  &::after {
+    transform: translate(-25%, -50%) rotate(45deg);
+  }
+  &::before {
+    transform: translate(-80%, -50%) rotate(-45deg);
+  }
+}
+
+@mixin caret-right {
+  &::after {
+    transform: translate(-50%, 100%) rotate(135deg);
+  }
+  &::before {
+    transform: translate(-50%, -100%) rotate(-135deg);
+  }
+}
+
+@mixin caret-left {
+  &::after {
+    transform: translate(-50%, 100%) rotate(45deg);
+  }
+  &::before {
+    transform: translate(-50%, -100%) rotate(-45deg);
+  }
+}
+
+@mixin caret-center {
+  &::after, &::before {
+    left: 50%;
+    right: auto;
+  }
+}
+
+
+@mixin caret($long: $caret-long, $width: $caret-width, $direction: down) {
+  padding-right: $long + 4px;
+
+  @if $enable-caret {
+    &::after, &::before  {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: inline-block;
+      width: $long;
+      height: 0;
+      border-top: $width solid;
+      transition: transform .3s ease;
+      z-index: 1;
+    }
+
+    @if $direction == down {
+      @include caret-down;
+    } @else if $direction == up {
+      @include caret-up;
+    } @else if $direction == right {
+      @include caret-right;
+    } @else if $direction == left {
+      @include caret-left;
+    }
+  }
+}
+

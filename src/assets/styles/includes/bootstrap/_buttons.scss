@@ -1,0 +1,78 @@
+@import "~bootstrap/scss/buttons";
+
+.btn {
+  position: relative;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+
+  &.btn-block {
+    display: flex;
+  }
+}
+
+.btn-link {
+  font-weight: $link-font-weight;
+}
+
+.btn-warning,
+.btn-info {
+
+  &,
+  &.disabled,
+  &:disabled,
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+.btn-outline-warning,
+.btn-outline-info {
+  @include hover {
+    color: $white;
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    color: $white;
+  }
+}
+
+.btn-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  &.btn-icon {
+    @each $color, $value in $theme-colors {
+      &.btn-#{$color} {
+        color: $value;
+        background-color: rgba($value, .15);
+        border-color: transparent;
+        transition: background-color .15s ease;
+
+        @include hover-focus {
+          background-color: rgba($value, .2);
+        }
+      }
+    }
+  }
+
+  &.btn {
+    min-height: $input-height;
+    min-width: $input-height;
+  }
+
+  &.btn-lg {
+    min-height: $input-height-lg;
+    min-width: $input-height-lg;
+  }
+
+  &.btn-sm {
+    min-height: $input-height-sm;
+    min-width: $input-height-sm;
+  }
+}

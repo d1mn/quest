@@ -1,0 +1,150 @@
+// COLORS
+$white:    #fff !default;
+$gray-100: #f5f7f9 !default;
+$gray-200: #e2e5e9 !default;
+$gray-300: #cdd0d6 !default;
+$gray-400: #bdc1c7 !default;
+$gray-500: #abb1ba !default;
+$gray-600: #8f959e !default;
+$gray-700: #595f69 !default;
+$gray-800: #31353a !default;
+$gray-900: #202327 !default;
+$black:    #000 !default;
+
+$blueDark: #364363 !default;
+$blue:     #3f7fee !default;
+$indigo:   #6610f2 !default;
+$purple:   #6f42c1 !default;
+$pink:     #e83e8c !default;
+$red:      #e86868 !default;
+$orange:   #fd7e14 !default;
+$yellow:   #fdbb49 !default;
+$green:    #29bc8b !default;
+$teal:     #20c997 !default;
+$cyan:     #17a2b8 !default;
+$gray:     #A0A7B1 !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+    (
+      "blueDark":   $blueDark,
+      "blue":       $blue,
+      "indigo":     $indigo,
+      "purple":     $purple,
+      "pink":       $pink,
+      "red":        $red,
+      "orange":     $orange,
+      "yellow":     $yellow,
+      "green":      $green,
+      "teal":       $teal,
+      "cyan":       $cyan,
+      "white":      $white,
+      "gray":       $gray,
+      "gray-dark":  $gray-800
+    ),
+    $colors
+);
+
+$primary:       $blueDark !default;
+$secondary:     $blue !default;
+$success:       $green !default;
+$info:          $gray !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          #141414 !default;
+$lightPink:     #f3cbd3 !default;
+
+
+$body-bg:       #232323 !default;
+$body-color:    $white !default;
+
+// MODULES
+$offset-sidebar: 25px;
+$offset-main: 20px;
+$offset-main-sm: 12px;
+$page-top-height: 48px;
+$sidebar-width: 240px;
+$sidebar-anim: transform .3s ease, width .3s ease;
+$sidebar-bg: $dark;
+$caret-long: 8px;
+$caret-width: 2px;
+
+
+// RESPONSIVE
+$grid-columns:      12;
+
+
+// TYPE
+$font-size-base:             0.813rem !default;
+$font-size-sm:               0.75rem !default;
+$font-size-lg:               0.875rem !default;
+$small-font-size:            0.75rem !default;
+$h1-font-size:               1.125rem !default;
+$h2-font-size:               0.938rem !default;
+$h3-font-size:               0.875rem !default;
+$text-muted:                 $gray-500 !default;
+$body-color:                 $gray-900 !default;
+
+$link-color:                 $secondary !default;
+$link-hover-color:           $link-color !default;
+$link-font-weight:           400 !default;
+
+$label-margin-bottom:        2px !default;
+
+
+// RADIUS
+$border-radius:               0 !default;
+$border-radius-lg:            4px !default;
+$border-radius-sm:            $border-radius !default;
+
+// SHADOWS
+$box-shadow-sm:               0 0 12px rgba($gray-500, .15) !default;
+$box-shadow:                  0 0 12px rgba($gray-500, .4) !default;
+$box-shadow-lg:               0 0 12px rgba($gray-500, .7) !default;
+
+// DROPDOWN
+$dropdown-box-shadow:         $box-shadow-lg !default;
+$dropdown-item-padding-y:     .75rem !default;
+$dropdown-item-padding-x:     1rem !default;
+$dropdown-border-width:       0 !default;
+
+
+// FORMS
+$form-check-inline-margin-x: 2rem !default;
+$form-check-input-gutter:    0 !default;
+
+
+// INPUT & BUTTON
+$input-btn-font-weight:    400 !default;
+$input-btn-font-size:      $font-size-lg !default;
+$input-btn-font-size-sm:   $font-size-sm !default;
+$input-btn-font-size-lg:   $font-size-lg !default;
+
+$input-btn-padding-y:      .285rem !default;
+$input-btn-padding-x:      1rem !default;
+
+$input-btn-border-width:   1px !default;
+
+
+// BUTTONS
+$btn-disabled-opacity:     .5 !default;
+$btn-border-radius:        0 !default;
+$btn-border-radius-lg:     0 !default;
+
+// INPUT
+$input-bg:                              $lightPink !default;
+$input-color:                           $dark !default;
+$input-font-weight:                     600 !default;
+$input-placeholder-color:               $gray-600;
+$input-border-color:                    $gray-300 !default;
+$input-border-radius:                   $border-radius !default;
+$input-focus-border-color:              $secondary !default;
+$input-disabled-bg:                     mix($gray-100, $white, 50%) !default;
+$input-disabled-color:                  mix($input-color, $white, 50%) !default;
+$input-disabled-border-color:           mix($input-border-color, $white, 50%) !default;
+$input-disabled-placeholder-color:      mix($input-placeholder-color, $white, 50%) !default;
+$input-padding-x:                       .75rem !default;
+$input-transition:                      border-color .15s ease-in-out, color .15s ease-in-out, background-color .15s ease-in-out !default;
+$input-group-addon-bg:                  $input-bg !default;

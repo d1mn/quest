@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/utilities/sizing";
+
+.w-1 {
+  width: 1px;
+}
+
+@for $i from 0 through 30 {
+  $step: $i * 10;
+
+  .min-width-#{$step} {
+    min-width: $step * 1px;
+  }
+}
+
+.h-flex-full {
+  display: flex !important;
+  flex-direction: column;
+  flex-grow: 1;
+}
