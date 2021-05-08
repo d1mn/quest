@@ -62,7 +62,13 @@ export class MainComponent implements OnInit, OnDestroy {
 
     if (this.form.valid) {
       this.pending$.next(true);
-      this.dataApi.send(this.form.value).pipe(
+      this.dataApi.send(
+        {
+          "boatName": this.form.value.teamName,
+          "codes": this.form.value.codes.filter(function (el) {
+            return el != null;
+          }),
+        }).pipe(
         takeUntil(this.destroy$),
         finalize(() => {
           console.log('final');
@@ -72,7 +78,21 @@ export class MainComponent implements OnInit, OnDestroy {
       ).subscribe((data) => {
         this.router.navigate(['/success'])
       }, (err: HttpErrorResponse) => {
-        this.errorMessage = err.error.message
+        this.errorMessage = err.error
+
+        switch(err.error) {
+          case 'NOT_ENOUGH_CODES':
+            this.errorMessage = "Вы ввели недостаточно кодов, нужно ввести больше"
+            break
+
+          case 'WRONG_BOAT_NAME':
+            this.errorMessage = "Вы ввели неверное имя команды"
+            break
+
+          default:
+            this.errorMessage = err.error
+            break
+        }
       })
 
     } else {

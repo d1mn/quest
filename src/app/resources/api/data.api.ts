@@ -11,7 +11,7 @@ interface DataInterface {
   providedIn: 'root'
 })
 export class DataApi extends Api {
-  readonly SEND: string = this.addUrl('check_codes');
+  readonly SEND: string = this.addUrl('v1/check_codes');
 
   constructor() {
     super({});
