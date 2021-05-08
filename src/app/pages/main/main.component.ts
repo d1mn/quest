@@ -16,7 +16,8 @@ export class MainComponent implements OnInit, OnDestroy {
   public pending$: State<boolean> = new State<boolean>(false);
 
   form: FormGroup = new FormGroup({
-    codes: new FormArray([])
+    teamName: new FormControl(),
+    codes: new FormArray([]),
   });
 
   codesLength: number = 10;
@@ -28,7 +29,7 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   get controls() {
-    return (this.form.get('codes') as FormArray).controls
+    return (this.form.get('codes') as FormArray).controls;
   }
 
   buildForm() {

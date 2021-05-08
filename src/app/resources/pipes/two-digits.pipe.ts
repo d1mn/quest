@@ -10,7 +10,7 @@ export class TwoDigitsPipe implements PipeTransform {
       return
     }
 
-    return ('0' + value.toString()).substr(-2) + '.'
+    return ('0' + value.toString()).substr(-2)
   }
 
 }

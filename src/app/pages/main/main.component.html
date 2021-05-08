@@ -8,6 +8,12 @@
       <p class="mb-5">Чтобы продолжить борьбу за суперприз, не пропусти Вечер активностей!<br>
         Кажется, тебе нужно, познакомиться с другими экипажами и кое-что собрать.</p>
       <form (submit)="submit()" [formGroup]="form">
+        <div class="d-flex align-items-end codeForm__code mb-3">
+          <div class="codeForm__number mr-2">Team</div>
+          <div class="form-group mb-1 flex-grow-1">
+            <input class="form-control form-control-sm codeForm__control" formControlName="teamName">
+          </div>
+        </div>
         <div class="d-flex align-items-end codeForm__code mb-3"
              formArrayName="codes"
              *ngFor="let item of controls; let index = index">
